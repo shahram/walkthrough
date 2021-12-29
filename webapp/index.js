@@ -1,14 +1,12 @@
 sap.ui.define([
-    "sap/m/Button", "sap/m/MessageToast"
+    "sap/ui/core/mvc/XMLView"
 ], function (
-    Button,
-    MessageToast
+    XMLView
 ) {
     "use strict";
-    new Button({
-        text: "Drück mich!",
-        press: function () {
-            MessageToast.show("Hello Jupiter!");
-        }
-    }).placeAt("content");
+    XMLView.create({
+        viewName: "de.jlabs.ui5.App"
+    }).then(function (oView) {
+        oView.placeAt("content");
+    });
 });
