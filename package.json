@@ -1,16 +1,17 @@
 {
-  "name": "sap.m.tutorial.walkthrough.01",
-  "version": "1.0.0",
-  "author": "SAP SE",
-  "description": "Sample: Walkthrough - Step 1 - Hello World!",
-  "scripts": {
-    "start": "ui5 serve",
-    "build": "ui5 build"
-  },
-  "dependencies": {
-    "@openui5/themelib_sap_fiori_3": "^1"
-  },
+  "name": "walkthrough",
+  "version": "0.0.1",
+  "description": "SAPUI5 Tutorial Walkthrough",
+
   "devDependencies": {
-    "@ui5/cli": "^2.0.0"
+    "@sap/ui5-builder-webide-extension": "1.0.x"
+  },
+  "scripts": {
+    "start": "ui5 serve"
+  },
+  "ui5": {
+    "dependencies": [
+      "@sap/ui5-builder-webide-extension"
+    ]
   }
 }
