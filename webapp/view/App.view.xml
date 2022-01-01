@@ -1,5 +1,10 @@
 <mvc:View
+    controllerName="de.jlabs.ui5.controller.App"
 	xmlns="sap.m"
     xmlns:mvc="sap.ui.core.mvc">
-    <Text text="Hello Mars!"/>
+    <!-- <Text text="Hello Mars!"/> -->
+    <Button
+        text="Say Jupiter"
+        press=".onShowHello"
+    />
 </mvc:View>
