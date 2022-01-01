@@ -4,7 +4,7 @@
     xmlns:mvc="sap.ui.core.mvc">
     <!-- <Text text="Hello Mars!"/> -->
     <Button
-        text="Say Jupiter"
+        text="{i18n>showHelloButtonText}"
         press=".onShowHello"
     />
     <Input
