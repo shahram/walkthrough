@@ -11,7 +11,7 @@ sap.ui.define([
         onShowHello: function () {
             // Show a native JavaScript alert
             // alert("Hello Jupiter")
-            MessageToast.show("Hello Mars or Jupiter!")
+            MessageToast.show("Hello Jupiter or Mars!");
         }
     });
 });
