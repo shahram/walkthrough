@@ -1,12 +1,21 @@
 sap.ui.define([
-    "sap/ui/core/mvc/XMLView"
+    // "sap/ui/core/mvc/XMLView"
+    "sap/ui/core/ComponentContainer"
 ], function (
-    XMLView
+    ComponentContainer
+    // XMLView
 ) {
     "use strict";
-    XMLView.create({
-        viewName: "de.jlabs.ui5.view.App"
-    }).then(function (oView) {
-        oView.placeAt("content");
-    });
+    new ComponentContainer({
+        name: "de.jlabs.ui5",
+        settings: {
+            id: "ui5"
+        },
+        async: true
+    }).placeAt("content")
+    // XMLView.create({
+    //     viewName: "de.jlabs.ui5.view.App"
+    // }).then(function (oView) {
+    //     oView.placeAt("content");
+    // });
 });

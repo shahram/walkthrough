@@ -1,13 +1,13 @@
 sap.ui.define([
     "sap/ui/core/mvc/Controller",
     "sap/m/MessageToast",
-    "sap/ui/model/json/JSONModel",
-    "sap/ui/model/resource/ResourceModel"
+    // "sap/ui/model/json/JSONModel",
+    // "sap/ui/model/resource/ResourceModel"
 ], function (
     Controller,
-    MessageToast,
-    JSONModel,
-    ResourceModel,
+    MessageToast
+    // JSONModel,
+    // ResourceModel,
 ) {
     "use strict";
 
@@ -15,22 +15,22 @@ sap.ui.define([
         /**
          * @override
          */
-        onInit: function () {
-            // Controller.prototype.onInit.apply(this, arguments);
-            // set data model on view
-            var oData = {
-                recipient: {
-                    name: "World"
-                }
-            };
-            var oModel = new JSONModel(oData);
-            this.getView().setModel(oModel);
-            // set i18n model on view
-            var i18nModel = new ResourceModel({
-                bundleName: "de.jlabs.ui5.i18n.i18n"
-            });
-            this.getView().setModel(i18nModel, "i18n");
-        },
+        // onInit: function () {
+        //     // Controller.prototype.onInit.apply(this, arguments);
+        //     // set data model on view
+        //     var oData = {
+        //         recipient: {
+        //             name: "World"
+        //         }
+        //     };
+        //     var oModel = new JSONModel(oData);
+        //     this.getView().setModel(oModel);
+        //     // set i18n model on view
+        //     var i18nModel = new ResourceModel({
+        //         bundleName: "de.jlabs.ui5.i18n.i18n"
+        //     });
+        //     this.getView().setModel(i18nModel, "i18n");
+        // },
         onShowHello: function () {
 
             // Show a native JavaScript alert
