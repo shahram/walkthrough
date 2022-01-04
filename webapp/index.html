@@ -8,14 +8,15 @@
 	<script crossorigin="anonymous" id="sap-ui-bootstrap"
 			src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js"
 			data-sap-ui-theme="sap_belize"
-			data-sap-ui-libs="sap.m, sap.ui.layout, sap.tnt"
 			data-sap-ui-resourceroots='{"de.jlabs.ui5": "./"}'
-			data-sap-ui-onInit="module:de/jlabs/ui5/index"
+			data-sap-ui-onInit="module:sap/ui/core/ComponentSupport"
 			data-sap-ui-compatVersion="edge"
 			data-sap-ui-async="true">
 	</script>
 </head>
 
-<body class="sapUiBody" id="content"></body>
+<body class="sapUiBody" id="content">
+	<div data-sap-ui-component data-name="de.jlabs.ui5" data-id="container" data-settings='{"id": "ui5"}'></div>
+</body>
 
 </html>
