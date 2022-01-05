@@ -1,11 +1,11 @@
 sap.ui.define([
     "sap/ui/core/mvc/Controller",
-    "sap/m/MessageToast",
+    // "sap/m/MessageToast",
     // "sap/ui/model/json/JSONModel",
     // "sap/ui/model/resource/ResourceModel"
 ], function (
     Controller,
-    MessageToast
+    // MessageToast
     // JSONModel,
     // ResourceModel,
 ) {
@@ -31,16 +31,16 @@ sap.ui.define([
         //     });
         //     this.getView().setModel(i18nModel, "i18n");
         // },
-        onShowHello: function () {
+        // onShowHello: function () {
 
-            // Show a native JavaScript alert
-            // alert("Hello Jupiter")
-            // read msg from i18n model
-            var oBundle = this.getView().getModel("i18n").getResourceBundle();
-            var sRecipient = this.getView().getModel().getProperty("/recipient/name");
-            var sMsg = oBundle.getText("helloMsg", [sRecipient]);
-            // show message
-            MessageToast.show(sMsg);
-        }
+        //     // Show a native JavaScript alert
+        //     // alert("Hello Jupiter")
+        //     // read msg from i18n model
+        //     var oBundle = this.getView().getModel("i18n").getResourceBundle();
+        //     var sRecipient = this.getView().getModel().getProperty("/recipient/name");
+        //     var sMsg = oBundle.getText("helloMsg", [sRecipient]);
+        //     // show message
+        //     MessageToast.show(sMsg);
+        // }
     });
 });
