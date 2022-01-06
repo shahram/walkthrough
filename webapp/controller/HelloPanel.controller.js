@@ -1,8 +1,10 @@
 sap.ui.define([
     "sap/m/MessageToast",
+    "sap/ui/core/Fragment",
     "sap/ui/core/mvc/Controller"
 ], function (
     MessageToast,
+    Fragment,
     Controller
 ) {
     "use strict";
@@ -18,6 +20,23 @@ sap.ui.define([
             var sMsg = oBundle.getText("helloMsg", [sRecipient]);
             // show message
             MessageToast.show(sMsg);
+        },
+        onOpenDialog: function () {
+            var oView = this.getView();
+            // create dialog lazily
+            if (!this._pDialog) {
+                this._pDialog = Fragment.load({
+                    id: oView.getId(),
+                    name: "de.jlabs.ui5.view.HelloDialog"
+                }).then(function (oDialog) {
+                    // connect dialog to the root view of this component (models, lifcycle)
+                    oView.addDependent(oDialog);
+                    return oDialog;
+                })
+            }
+            this._pDialog.then(function (oDialog) {
+                oDialog.open();
+            })
         }
     });
 });
