@@ -1,10 +1,10 @@
 sap.ui.define([
     "sap/m/MessageToast",
-    "sap/ui/core/Fragment",
+    // "sap/ui/core/Fragment",
     "sap/ui/core/mvc/Controller"
 ], function (
     MessageToast,
-    Fragment,
+    // Fragment,
     Controller
 ) {
     "use strict";
@@ -22,25 +22,23 @@ sap.ui.define([
             MessageToast.show(sMsg);
         },
         onOpenDialog: function () {
-            var oView = this.getView();
-            // create dialog lazily
-            if (!this._pDialog) {
-                this._pDialog = Fragment.load({
-                    id: oView.getId(),
-                    name: "de.jlabs.ui5.view.HelloDialog",
-                    controller: this
-                }).then(function (oDialog) {
-                    // connect dialog to the root view of this component (models, lifcycle)
-                    oView.addDependent(oDialog);
-                    return oDialog;
-                })
-            }
-            this._pDialog.then(function (oDialog) {
-                oDialog.open();
-            })
+            this.getOwnerComponent().openHelloDialog()
+            // var oView = this.getView();
+            // // create dialog lazily
+            // if (!this._pDialog) {
+            //     this._pDialog = Fragment.load({
+            //         id: oView.getId(),
+            //         name: "de.jlabs.ui5.view.HelloDialog",
+            //         controller: this
+            //     }).then(function (oDialog) {
+            //         // connect dialog to the root view of this component (models, lifcycle)
+            //         oView.addDependent(oDialog);
+            //         return oDialog;
+            //     })
+            // }
         },
-        onCloseDialog: function () {
-            this.byId("helloDialog").close();
-        }
+        // onCloseDialog: function () {
+        //     this.byId("helloDialog").close();
+        // }
     });
 });

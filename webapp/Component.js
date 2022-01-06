@@ -1,11 +1,13 @@
 sap.ui.define([
     "sap/ui/core/UIComponent",
     "sap/ui/model/json/JSONModel",
+    "./controller/HelloDialog"
     // "sap/base/i18n/ResourceBundle"
     // "sap/ui/model/resource/ResourceModel"
 ], function (
     UIComponent,
     JSONModel,
+    HelloDialog
     // ResourceBundle,
     // ResourceModel
 ) {
@@ -35,12 +37,20 @@ sap.ui.define([
             };
             var oModel = new JSONModel(oData);
             this.setModel(oModel);
-
+            // set dialog
+            this._helloDialog = new HelloDialog(this.getRootControl());
             // // set i18 Model
             // var i18Model = new ResourceModel({
             //     bundleName: "de.jlabs.ui5.i18n.i18n"
             // });
             // this.setModel(i18Model, "i18n");
+        },
+        exit: function () {
+            this._helloDialog.destroy();
+            delete this._helloDialog;
+        },
+        openHelloDialog: function () {
+            this._helloDialog.open();
         }
     });
 });

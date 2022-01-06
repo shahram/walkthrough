@@ -12,6 +12,9 @@ sap.ui.define([
     "use strict";
 
     return Controller.extend("de.jlabs.ui5.controller.App", {
+        onOpenDialog: function () {
+            this.getOwnerComponent().openHelloDialog();
+        }
         /**
          * @override
          */
