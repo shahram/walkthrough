@@ -15,7 +15,9 @@ sap.ui.define([
     return UIComponent.extend("de.jlabs.ui5.Component", {
 
         metadata: {
-            "interfaces": ["IAsyncContentCreation"],
+            // !!! There is an issue with IAsyncContentCreation !!!
+            // By removing the the line below the Dialog works fine!!!
+            interfaces: ["sap.ui.core.IAsyncContentCreation"],
             // "rootView": {
             //     "viewName": "de.jlabs.ui5.view.App",
             //     "type": "XML",
