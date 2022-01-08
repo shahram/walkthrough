@@ -30,6 +30,7 @@
     "sap.ui5": {
         "fullWidth": true,
         "flexEnabled": false,
+        "interfaces": ["sap.ui.core.IAsyncContentCreation"],
         "rootView": {
             "viewName": "de.jlabs.ui5.view.App",
             "type": "XML",
@@ -56,6 +57,10 @@
                     "supportedLocales": [""],
                     "fallbackLocale": ""
                 }
+            },
+            "invoice": {
+                "type": "sap.ui.model.json.JSONModel",
+                "uri": "Invoices.json"
             }
         },
         "resources": {

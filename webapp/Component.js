@@ -17,12 +17,13 @@ sap.ui.define([
         metadata: {
             // !!! There is an issue with IAsyncContentCreation !!!
             // By removing the the line below the Dialog works fine!!!
-            interfaces: ["sap.ui.core.IAsyncContentCreation"],
-            // "rootView": {
-            //     "viewName": "de.jlabs.ui5.view.App",
-            //     "type": "XML",
-            //     "id": "app"
-            // }
+            // Added below line to manifest.
+            /* interfaces: ["sap.ui.core.IAsyncContentCreation"],
+                "rootView": {
+                "viewName": "de.jlabs.ui5.view.App",
+                "type": "XML",
+                "id": "app"
+            } */
             manifest: "json"
         },
 
