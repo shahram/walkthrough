@@ -12,15 +12,22 @@
         <ObjectListItem 
             title="{invoice>Quantity} x {invoice>ProductName}"
             number="{
-                parts: [{path: 'invoice>ExtendedPrice'}, {path: 'view>/currency'}],
+                parts: [{path: 'invoice>ExtendedPrice'}, {path: 'view>/currency.RIP'}],
                 type: 'sap.ui.model.type.Currency',
                 formatOptions: {
                     showMessure: false
                 }
             }"
             numberUnit="{view>/currency}"
-            numberState="{= ${invoice>ExtendedPrice} > 50 ? 'Error' : 'Success'}"
-            />
+            numberState="{= ${invoice>ExtendedPrice} > 50 ? 'Error' : 'Success'}">
+            <firstStatus>
+                <ObjectStatus 
+                    text="{
+                        path: 'invoice>Status',
+                        formatter: '.formatter.statusText'
+                    }"/>
+            </firstStatus>
+        </ObjectListItem>
     </items>
     
 </List>
